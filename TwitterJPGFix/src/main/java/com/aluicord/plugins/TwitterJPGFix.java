@@ -27,21 +27,8 @@ public class TwitterJPGFix extends Plugin {
                         return;
                     }
 
-                    List<String> pathSegments = uri.getPathSegments();
-                    int startSegment = 0;
-                    for (int i = 0; i < pathSegments.size(); i++) {
-                        if (pathSegments.get(i).contains(".twimg.com")) {
-                            startSegment = i;
-                            break;
-                        }
-                    }
-                    String pathType = pathSegments.get(startSegment+1);
-                    if (!(pathType == "media")) {
-                        return; 
-                    }
-
                     try {
-                        String newUri = uri.replaceAll("(?i)((\.jpg:large)|(\.jpg%3Alarge)|(\.jpg_large)|(\.jpg%5Flarge))$", ".jpg");
+                        String newUri = uri.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
                         uri = Uri.parse(newUri);
                     } catch (Exception e) {
                         logger.error(e);
