@@ -5,17 +5,13 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        // Aliucords Maven repo which contains our tools and dependencies
-        maven("https://maven.aliucord.com/snapshots")
-        // Shitpack which still contains some Aliucord dependencies for now. TODO: Remove
         maven("https://jitpack.io")
+        maven("https://maven.aliucord.com/snapshots")
     }
-
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.4")
-        // Aliucord gradle plugin which makes everything work and builds plugins
         classpath("com.aliucord:gradle:main-SNAPSHOT")
         classpath("com.aliucord:jadb:1.2.1-SNAPSHOT")
+        classpath("com.android.tools.build:gradle:7.0.4")
     }
 }
 
@@ -35,11 +31,12 @@ subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "com.aliucord.gradle")
 
-    // Fill out with your info
+
     aliucord {
-        author("pikachugabe", 701095070870274139L)
-        updateUrl.set("https://raw.githubusercontent.com/PikachuGabe/AliuPlugins/builds/updater.json")
-        buildUrl.set("https://raw.githubusercontent.com/PikachuGabe/AliuPlugins/builds/%s.zip")
+        author("mantikafasi", 287555395151593473)
+
+        updateUrl.set("https://raw.githubusercontent.com/mantikafasi/AliucordPlugins/builds/updater.json")
+        buildUrl.set("https://raw.githubusercontent.com/mantikafasi/AliucordPlugins/builds/%s.zip")
     }
 
     android {
