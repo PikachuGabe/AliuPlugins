@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.jvm.functions.Function1;
 
 @AliucordPlugin
-public class TwitterJPGFix extends Plugin {
+public class TwitterDownloadFix extends Plugin {
 
     @Override
     public void start(Context context) throws Throwable {

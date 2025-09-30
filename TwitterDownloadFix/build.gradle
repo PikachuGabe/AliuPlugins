@@ -5,6 +5,11 @@ aliucord {
 }
 
 aliucord.changelog.set("""
+# 1.1.0
+Fixed the plugin.
+Switched to regex for file renaming.
+Renamed plugin at Rushii's request.
+
 # 1.0.0
 Plugin release
 
