@@ -1,4 +1,4 @@
-package uk.co.pikachugabe.aliuplugins.twitterjpg;
+package com.aluicord.plugins;
 
 import android.content.Context;
 import android.net.Uri;

@@ -1,0 +1,11 @@
+version = "1.0.0" // Plugin version. Increment this to trigger the updater
+description = "Make Twitter embed images download as `jpg` instead of `jpg:large`." // Plugin description that will be shown to user
+aliucord {
+    author("pikachugabe",701095070870274139,true)
+}
+
+aliucord.changelog.set("""
+# 1.0.0
+Plugin release
+
+""")

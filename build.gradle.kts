@@ -15,6 +15,7 @@ buildscript {
         classpath("com.android.tools.build:gradle:7.0.4")
         // Aliucord gradle plugin which makes everything work and builds plugins
         classpath("com.aliucord:gradle:main-SNAPSHOT")
+        classpath("com.aliucord:jadb:1.2.1-SNAPSHOT")
     }
 }
 
@@ -42,11 +43,11 @@ subprojects {
     }
 
     android {
-        compileSdkVersion(31)
+        compileSdkVersion(30)
 
         defaultConfig {
             minSdk = 24
-            targetSdk = 31
+            targetSdk = 30
         }
 
         compileOptions {
@@ -58,15 +59,10 @@ subprojects {
 
     dependencies {
         val discord by configurations
-        val implementation by configurations
+        val compileOnly by configurations
 
-        // Stubs for all Discord classes
         discord("com.discord:discord:aliucord-SNAPSHOT")
-        implementation("com.aliucord:Aliucord:main-SNAPSHOT")
-
-        implementation("androidx.appcompat:appcompat:1.4.0")
-        implementation("com.google.android.material:material:1.4.0")
-        implementation("androidx.constraintlayout:constraintlayout:2.1.2")
+        compileOnly("com.aliucord:Aliucord:main-SNAPSHOT")
     }
 }
 
