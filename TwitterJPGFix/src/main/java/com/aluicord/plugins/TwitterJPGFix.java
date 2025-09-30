@@ -35,19 +35,13 @@ public class TwitterJPGFix extends Plugin {
                             break;
                         }
                     }
-
-                    String hostname = pathSegments.get(startSegment);
                     String pathType = pathSegments.get(startSegment+1);
-                    String fileName = pathSegments.get(startSegment+2);
                     if (!(pathType == "media")) {
                         return; 
                     }
 
-                    fileName = fileName.replace(".jpg:large", ".jpg");
-                    fileName = fileName.replace(".jpg%3Alarge", ".jpg");
-                    fileName = fileName.replace(".jpg_large", ".jpg");
-                    String newUri = "https://"+hostname+"/"+pathType+"/"+fileName;
                     try {
+                        String newUri = uri.replaceAll("(?i)((\.jpg:large)|(\.jpg%3Alarge)|(\.jpg_large)|(\.jpg%5Flarge))$", ".jpg");
                         uri = Uri.parse(newUri);
                     } catch (Exception e) {
                         logger.error(e);
