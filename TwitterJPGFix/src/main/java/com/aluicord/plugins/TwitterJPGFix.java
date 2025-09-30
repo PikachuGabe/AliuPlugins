@@ -28,7 +28,8 @@ public class TwitterJPGFix extends Plugin {
                     }
 
                     try {
-                        String newUri = uri.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
+                        String uriStr = Uri.toString(uri);
+                        String newUri = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
                         uri = Uri.parse(newUri);
                     } catch (Exception e) {
                         logger.error(e);
