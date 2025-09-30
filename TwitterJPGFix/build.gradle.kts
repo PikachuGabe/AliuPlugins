@@ -1,5 +1,5 @@
-version = "1.0.1" // Plugin version. Increment this to trigger the updater
-description = "Disable upside down screen rotation" // Plugin description that will be shown to user
+version = "1.0.0" // Plugin version. Increment this to trigger the updater
+description = "Make Twitter embed images download as `jpg` instead of `jpg:large`." // Plugin description that will be shown to user
 
 aliucord {
     // Changelog of your plugin

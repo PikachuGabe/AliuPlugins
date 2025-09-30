@@ -36,9 +36,9 @@ subprojects {
 
     // Fill out with your info
     aliucord {
-        author("Clienthax", 98355277182566400L)
-        updateUrl.set("https://raw.githubusercontent.com/clienthax/AliuPlugins/builds/updater.json")
-        buildUrl.set("https://raw.githubusercontent.com/clienthax/AliuPlugins/builds/%s.zip")
+        author("pikachugabe", 701095070870274139L)
+        updateUrl.set("https://raw.githubusercontent.com/PikachuGabe/AliuPlugins/builds/updater.json")
+        buildUrl.set("https://raw.githubusercontent.com/PikachuGabe/AliuPlugins/builds/%s.zip")
     }
 
     android {

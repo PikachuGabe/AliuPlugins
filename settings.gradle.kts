@@ -1,4 +1,3 @@
 rootProject.name = "AliucordPlugins"
 
-include(":NoUpsideDown")
-include(":TenorGifFix")
+include(":TwitterJPGFix")

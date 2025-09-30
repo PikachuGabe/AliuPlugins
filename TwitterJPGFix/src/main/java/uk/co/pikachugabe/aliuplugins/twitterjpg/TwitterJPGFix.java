@@ -1,4 +1,4 @@
-package uk.co.haxyshideout.aliuplugins.tenorgif;
+package uk.co.pikachugabe.aliuplugins.twitterjpg;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.jvm.functions.Function1;
 
 @AliucordPlugin
-public class TenorGifFix extends Plugin {
+public class TwitterJPGFix extends Plugin {
 
     @Override
     public void start(Context context) throws Throwable {
@@ -23,29 +23,28 @@ public class TenorGifFix extends Plugin {
                 new PreHook(param -> {
                     Uri uri = (Uri) param.args[1];
 
-                    if (!uri.getPath().contains(".tenor.com")) {
+                    if (!uri.getPath().contains(".twimg.com")) {
                         return;
                     }
 
                     List<String> pathSegments = uri.getPathSegments();
                     int startSegment = 0;
                     for (int i = 0; i < pathSegments.size(); i++) {
-                        if (pathSegments.get(i).contains(".tenor.com")) {
+                        if (pathSegments.get(i).contains(".twimg.com")) {
                             startSegment = i;
                             break;
                         }
                     }
 
                     String hostname = pathSegments.get(startSegment);
-                    String tenorID = pathSegments.get(startSegment+1);
+                    String pathType = pathSegments.get(startSegment+1);
                     String fileName = pathSegments.get(startSegment+2);
-                    if (tenorID.endsWith("AC")) {
-                        return;
+                    if (!pathType == "media") {
+                        return; 
                     }
 
-                    tenorID = tenorID.substring(0, tenorID.length()-2) + "AC";
-                    fileName = fileName.replace(".mp4", ".gif");
-                    String newUri = "https://"+hostname+"/"+tenorID+"/"+fileName;
+                    fileName = fileName.replace(".jpg:large", ".jpg");
+                    String newUri = "https://"+hostname+"/"+pathType+"/"+fileName;
                     try {
                         uri = Uri.parse(newUri);
                     } catch (Exception e) {
