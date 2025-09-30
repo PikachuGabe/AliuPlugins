@@ -33,10 +33,10 @@ subprojects {
 
 
     aliucord {
-        author("mantikafasi", 287555395151593473)
+        author("pikachugabe", 701095070870274139)
 
-        updateUrl.set("https://raw.githubusercontent.com/mantikafasi/AliucordPlugins/builds/updater.json")
-        buildUrl.set("https://raw.githubusercontent.com/mantikafasi/AliucordPlugins/builds/%s.zip")
+        updateUrl.set("https://raw.githubusercontent.com/PikachuGabe/AliuPlugins/builds/updater.json")
+        buildUrl.set("https://raw.githubusercontent.com/PikachuGabe/AliuPlugins/builds/%s.zip")
     }
 
     android {
