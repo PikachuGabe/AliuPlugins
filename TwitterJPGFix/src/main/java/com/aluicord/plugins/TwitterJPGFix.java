@@ -44,6 +44,8 @@ public class TwitterJPGFix extends Plugin {
                     }
 
                     fileName = fileName.replace(".jpg:large", ".jpg");
+                    fileName = fileName.replace(".jpg%3Alarge", ".jpg");
+                    fileName = fileName.replace(".jpg_large", ".jpg");
                     String newUri = "https://"+hostname+"/"+pathType+"/"+fileName;
                     try {
                         uri = Uri.parse(newUri);
