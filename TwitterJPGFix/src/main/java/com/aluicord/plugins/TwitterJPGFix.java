@@ -39,7 +39,7 @@ public class TwitterJPGFix extends Plugin {
                     String hostname = pathSegments.get(startSegment);
                     String pathType = pathSegments.get(startSegment+1);
                     String fileName = pathSegments.get(startSegment+2);
-                    if !(pathType == "media") {
+                    if (!(pathType == "media")) {
                         return; 
                     }
 
