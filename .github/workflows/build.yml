@@ -22,7 +22,7 @@ jobs:
       - name: Checkout Aluicord
         uses: actions/checkout@v4
         with:
-          repository: "Aluicord/Aluicord"
+          repository: "Aliucord/Aliucord"
           path: "repo"
 
       - name: Setup JDK 11
