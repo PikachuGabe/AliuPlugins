@@ -19,6 +19,12 @@ jobs:
           ref: "builds"
           path: "builds"
 
+      - name: Checkout Aluicord
+        uses: actions/checkout@v4
+        with:
+          repository: "Aluicord/Aluicord"
+          path: "repo"
+
       - name: Setup JDK 11
         uses: actions/setup-java@v4
         with:
