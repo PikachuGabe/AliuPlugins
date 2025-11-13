@@ -56,7 +56,7 @@ subprojects {
 
     dependencies {
         val discord by configurations
-        val compileOnly by configurations
+        val implementation by configurations
 
         discord("com.discord:discord:aliucord-SNAPSHOT")
         implementation("com.aliucord:Aliucord:main-SNAPSHOT")
