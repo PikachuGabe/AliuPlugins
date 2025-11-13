@@ -19,8 +19,8 @@ jobs:
           ref: "builds"
           path: "builds"
 
-      - name: Checkout Aluicord
-        uses: actions/checkout@v4
+      - name: Checkout Aliucord
+        uses: actions/checkout@master
         with:
           repository: "Aliucord/Aliucord"
           path: "repo"
