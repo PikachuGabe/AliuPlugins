@@ -11,7 +11,7 @@ buildscript {
     dependencies {
         classpath("com.aliucord:gradle:main-SNAPSHOT")
         classpath("com.aliucord:jadb:1.2.1-SNAPSHOT")
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath("com.android.tools.build:gradle:7.4.2")
     }
 }
 
@@ -48,8 +48,8 @@ subprojects {
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
 
     }
