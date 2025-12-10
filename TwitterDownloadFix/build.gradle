@@ -1,7 +1,11 @@
-version = "1.1.0" // Plugin version. Increment this to trigger the updater
+version = "1.2.0" // Plugin version. Increment this to trigger the updater
 description = "Make Twitter embed images download as `jpg` instead of `jpg:large`." // Plugin description that will be shown to user
 
 aliucord.changelog.set("""
+# 1.2.0
+Fixed the plugin. Again.
+Now downloads directly from twitter instead of through discord's external image stuff.
+
 # 1.1.0
 Fixed the plugin.
 Switched to regex for file renaming.
