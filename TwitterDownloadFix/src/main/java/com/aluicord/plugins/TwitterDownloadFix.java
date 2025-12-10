@@ -29,8 +29,9 @@ public class TwitterDownloadFix extends Plugin {
 
                     try {
                         String uriStr = uri.toString();
-                        String newUri = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
-                        uri = Uri.parse(newUri);
+                        uriStr = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
+                        uriStr = uriStr.replaceAll(".*https\\/", "https://");
+                        uri = Uri.parse(uriStr);
                     } catch (Exception e) {
                         logger.error(e);
                     }
