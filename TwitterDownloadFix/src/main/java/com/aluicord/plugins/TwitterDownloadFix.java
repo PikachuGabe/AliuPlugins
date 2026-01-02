@@ -23,15 +23,26 @@ public class TwitterDownloadFix extends Plugin {
                 new PreHook(param -> {
                     Uri uri = (Uri) param.args[1];
 
-                    if (!uri.getPath().contains(".twimg.com")) {
+                    if (uri.getPath().contains(".twimg.com")) {
+                        String Url = "twt";
+                    } else if (uri.getPath().contains("cdn.bsky.app"))  {
+                        String Url = "bsky";
+                    } else {
                         return;
                     }
 
                     try {
-                        String uriStr = uri.toString();
-                        uriStr = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
-                        uriStr = uriStr.replaceAll(".*https\\/", "https://");
-                        uri = Uri.parse(uriStr);
+                        if Url == "twt"{
+                            String uriStr = uri.toString();
+                            uriStr = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
+                            uriStr = uriStr.replaceAll(".*https\\/", "https://");
+                            uri = Uri.parse(uriStr);
+                        } else if Url == "bsky" {
+                            String uriStr = uri.toString();
+                            uriStr = uriStr.replaceAll("(?i)((@)|(%40))", ".");
+                            uriStr = uriStr.replaceAll(".*https\\/", "https://");
+                            uri = Uri.parse(uriStr);
+                        }
                     } catch (Exception e) {
                         logger.error(e);
                     }
