@@ -41,8 +41,11 @@ public class TwitterDownloadFix extends Plugin {
                             uri = Uri.parse(uriStr);
                         } else if (Url == "bsky") {
                             String uriStr = uri.toString();
+                            logger.verbose(uriStr);
                             uriStr = uriStr.replaceAll("(?i)((@)|(%40))", ".");
+                            logger.verbose(uriStr);
                             uriStr = uriStr.replaceAll(".*https\\/", "https://");
+                            logger.verbose(uriStr);
                             uri = Uri.parse(uriStr);
                         }
                     } catch (Exception e) {
