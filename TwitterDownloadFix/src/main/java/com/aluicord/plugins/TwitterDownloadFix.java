@@ -26,12 +26,12 @@ public class TwitterDownloadFix extends Plugin {
                     String Url = "tmp"; // I have to set up this variable before the if statements so the compiler can see them when it compiles the try/catch statement.
 
                     String uriStr = uri.toString();
-                    logger.verbose(uriStr);
+                    // logger.verbose(uriStr);
                     
                     if (uri.getPath().contains(".twimg.com")) {
                         Url = "twt";
-                    } else if (uri.getPath().contains("cdn.bsky.app"))  {
-                        Url = "bsky";
+                    // } else if (uri.getPath().contains("cdn.bsky.app"))  {
+                    //     Url = "bsky";
                     } else {
                         return;
                     }
@@ -41,12 +41,13 @@ public class TwitterDownloadFix extends Plugin {
                             uriStr = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
                             uriStr = uriStr.replaceAll(".*https\\/", "https://");
                             uri = Uri.parse(uriStr);
-                        } else if (Url == "bsky") {
-                            uriStr = uriStr.replaceAll("(?i)((@)|(%40))", ".");
-                            logger.verbose(uriStr);
-                            uriStr = uriStr.replaceAll(".*https\\/", "https://");
-                            logger.verbose(uriStr);
-                            uri = Uri.parse(uriStr);
+                        // } else if (Url == "bsky") {
+                            // uriStr = uriStr.replaceAll("(?i)((@)|(%40))", ".");
+                            // logger.verbose(uriStr);
+                            // uriStr = uriStr.replaceAll(".*https\\/", "https://");
+                            // logger.verbose(uriStr);
+                            // uri = Uri.parse(uriStr);
+                            // Bluesky actually stores the files as @jpeg instead of .jpeg so changing the URL doesn't work, will have to figure out how to change the file type after downloading.
                         }
                     } catch (Exception e) {
                         logger.error(e);
