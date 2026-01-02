@@ -25,6 +25,9 @@ public class TwitterDownloadFix extends Plugin {
 
                     String Url = "tmp"; // I have to set up this variable before the if statements so the compiler can see them when it compiles the try/catch statement.
 
+                    String uriStr = uri.toString();
+                    logger.verbose(uriStr);
+                    
                     if (uri.getPath().contains(".twimg.com")) {
                         Url = "twt";
                     } else if (uri.getPath().contains("cdn.bsky.app"))  {
@@ -41,7 +44,6 @@ public class TwitterDownloadFix extends Plugin {
                             uri = Uri.parse(uriStr);
                         } else if (Url == "bsky") {
                             String uriStr = uri.toString();
-                            logger.verbose(uriStr);
                             uriStr = uriStr.replaceAll("(?i)((@)|(%40))", ".");
                             logger.verbose(uriStr);
                             uriStr = uriStr.replaceAll(".*https\\/", "https://");
