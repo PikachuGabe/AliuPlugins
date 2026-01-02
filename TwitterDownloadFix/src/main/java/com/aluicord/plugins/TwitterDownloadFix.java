@@ -23,7 +23,7 @@ public class TwitterDownloadFix extends Plugin {
                 new PreHook(param -> {
                     Uri uri = (Uri) param.args[1];
 
-                    String Url = "tmp" // I have to set up this variable before the if statements so the compiler can see them when it compiles the try/catch statement.
+                    String Url = "tmp"; // I have to set up this variable before the if statements so the compiler can see them when it compiles the try/catch statement.
 
                     if (uri.getPath().contains(".twimg.com")) {
                         Url = "twt";
