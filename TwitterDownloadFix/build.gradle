@@ -1,7 +1,11 @@
-version = "1.3.0" // Plugin version. Increment this to trigger the updater
-description = "Make Twitter embed images download as `jpg` instead of `jpg:large`, also makes bsky embed images download as `.jpeg` instead of `@jpeg`." // Plugin description that will be shown to user
+version = "1.3.1" // Plugin version. Increment this to trigger the updater
+description = "Make Twitter embed images download as `jpg` instead of `jpg:large`." // Plugin description that will be shown to user
 
 aliucord.changelog.set("""
+# 1.3.1
+Bluesky actually stores the files as @jpeg instead of .jpeg so changing the URL doesn't work, so I can't fix that right now. 
+Will have to figure out how to change the file type after downloading instead of just changing the download URL.
+
 # 1.3.0
 Added bluesky support because I noticed it uses `@` instead of `.` when denoting file type. Not updating plugin name as that would break the updater.
 
