@@ -32,12 +32,12 @@ public class TwitterDownloadFix extends Plugin {
                     }
 
                     try {
-                        if Url == "twt"{
+                        if (Url == "twt") {
                             String uriStr = uri.toString();
                             uriStr = uriStr.replaceAll("(?i)((\\.jpg:large)|(\\.jpg%3Alarge)|(\\.jpg_large)|(\\.jpg%5Flarge))$", ".jpg");
                             uriStr = uriStr.replaceAll(".*https\\/", "https://");
                             uri = Uri.parse(uriStr);
-                        } else if Url == "bsky" {
+                        } else if (Url == "bsky") {
                             String uriStr = uri.toString();
                             uriStr = uriStr.replaceAll("(?i)((@)|(%40))", ".");
                             uriStr = uriStr.replaceAll(".*https\\/", "https://");
